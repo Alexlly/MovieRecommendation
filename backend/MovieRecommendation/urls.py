@@ -17,8 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 from apps.Movies import views as movieView
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', movieView.index, name="index")
+    path('', TemplateView.as_view(template_name="index.html")),
 ]
