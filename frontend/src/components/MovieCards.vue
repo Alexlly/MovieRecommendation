@@ -74,7 +74,7 @@ export default {
     });
     if (res.data){
       this.populateInfo(res.data)
-    }
+    } // Add condition where movie is not found
     
   }
 }
