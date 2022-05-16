@@ -1,9 +1,9 @@
 <template>
-  <n-card title="Card with Cover">
+  <n-card :title=name>
     <template #cover>
       <img src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg">
     </template>
-    Card Content
+    {{this.name}}
   </n-card>
 </template>
 
@@ -21,6 +21,10 @@ export default {
     return{
       test: "test"
     }
+  },
+
+  props: {
+    name: String,
   }
 }
 </script>

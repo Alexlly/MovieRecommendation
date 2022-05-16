@@ -1,7 +1,7 @@
 <template>
   <h1> This is where the results go </h1>
   <template v-for="movie in movies" :key="movie">
-    <MovieCard/>
+    <MovieCard :name="movie"/>
     <h2>{{movie}}</h2>
   </template>
   <h2> Search for more movie recommendations! </h2>
