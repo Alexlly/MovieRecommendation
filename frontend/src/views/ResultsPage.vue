@@ -24,6 +24,10 @@ export default {
     return{
       movies: ["The Batman (2022)", "Dien Binh Phu (1992)", "Blade Runner 2049 (2018)", "Dune (2021)", "Sicario (2015)"]
     }
+  },
+
+  created(){
+    console.log(typeof(this.movies[0]))
   }
 }
 </script>

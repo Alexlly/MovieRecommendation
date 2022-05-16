@@ -1,7 +1,7 @@
 <template>
   <n-card :title=name>
     <template #cover>
-      <img src="https://m.media-amazon.com/images/M/MV5BMjA5NjM3NTk1M15BMl5BanBnXkFtZTgwMzg1MzU2NjE@._V1_SX300.jpg">
+      <img :src=this.poster>
     </template>
   </n-card>
 </template>
@@ -19,7 +19,8 @@ export default {
 
   data() {
     return{
-      test: "test"
+      test: "test",
+      poster: null
     }
   },
 
@@ -37,6 +38,10 @@ export default {
       for (let i = 0; i < test.size; i++){
         console.log("testt")
       }
+    },
+
+    populateInfo(movieSearch){
+      this.poster = movieSearch.Search[0].Poster
     }
   },
 
@@ -44,24 +49,33 @@ export default {
     name: String,
   },
 
-  created(){
-    const key = process.env.MOVIE_KEY
-    console.log(key)
+  async created(){
+    console.log(this.name)
+    let arr = this.name.split("(")
+    arr[0] = arr[0].trim()
+    arr[arr.length - 1] = arr[arr.length - 1].slice(0, -1) // (Removed last bracket)
     const options = {
       method: 'GET',
       url: 'https://movie-database-alternative.p.rapidapi.com/',
-      params: {s: 'Sicario', r: 'json', page: '1'},
+      params: {s: arr[0], r: 'json', page: '1'},
       headers: {
         'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com',
         'X-RapidAPI-Key': `${process.env.VUE_APP_MOVIE_KEY}`
       }
     };
+    
+    /*axios.interceptors.request.use(request => {
+      console.log('Starting Request', JSON.stringify(request, null, 2))
+      return request
+    })*/ //Testing get request from axios
 
-    axios.request(options).then(function (response) {
-      console.log(response.data);
-    }).catch(function (error) {
+    let res = await axios.request(options).catch(function (error) {
       console.error(error);
     });
+    if (res.data){
+      this.populateInfo(res.data)
+    }
+    
   }
 }
 </script>
