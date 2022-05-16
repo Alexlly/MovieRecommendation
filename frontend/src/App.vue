@@ -1,20 +1,18 @@
 <template>
   <n-message-provider>
     <HeaderComponent/>
-    <HomePage/>
+    <router-view/>
   </n-message-provider>
 </template>
 
 <script>
 import HeaderComponent from './components/Header.vue'
-import HomePage from './views/HomePage.vue'
-import  {NMessageProvider } from 'naive-ui'
+import { NMessageProvider } from 'naive-ui'
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
-    HomePage,
     NMessageProvider
   }
   // text-align: center;
