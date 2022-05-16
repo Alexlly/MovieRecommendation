@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <n-space vertical>
-      <n-input v-model:value="name" class="input" type="text" placeholder="e.g. Sicario" @update:value="handleFieldEntry"/>
+      <n-input v-model:value="name" class="input" type="text" placeholder="e.g. Sicario"/>
       <n-button type="primary" @click="handleClick"> Search! </n-button>
     </n-space>
   </div>
@@ -30,12 +30,8 @@ export default {
   },
 
   methods: {
-    handleFieldEntry(){
-      console.log(this.name)
-    },
-
     handleClick(){
-      if (this.name === null){
+      if (this.name === null || this.name.length == 0){
         console.log(
           "Error. Please enter a movie name."
         )
@@ -50,6 +46,6 @@ export default {
 
 <style scoped>
   .input {
-    max-width: 75%;
+    max-width: 50%;
   }
 </style>
