@@ -1,6 +1,6 @@
 <template>
   <div class="parent">
-    <div>
+    <div class="QueryResult">
       <h1> Movies most similar to {{this.searchQuery}} </h1>
     </div>
     <div class="container">
@@ -32,6 +32,7 @@ export default {
 
   props: {
     searchQuery: String,
+    //moviesRec: Array
   },
 
 
@@ -74,6 +75,10 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+
+  .QueryResult{
+
   }
 
 </style>

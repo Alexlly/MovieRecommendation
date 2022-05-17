@@ -12,6 +12,7 @@
 <script>
 import { NInput, NButton, useMessage } from 'naive-ui'
 import router from '../router'
+//import axios from 'axios'
 
 export default {
   name: 'SearchBar',
@@ -32,7 +33,7 @@ export default {
   },
 
   methods: {
-    handleClick(){
+    async handleClick(){
       if (this.name === null || this.name.length == 0){
         console.log(
           "Error. Please enter a movie name."
@@ -41,10 +42,13 @@ export default {
       }
       else{
         console.log(`Button clicked. Sending ${this.name}`)
+        //let res = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/recommendation`, {name: this.name})
+        //let moviesRec = res.data
         router.push({
           name: 'Result',
           params: {
-            searchQuery: this.name
+            searchQuery: this.name,
+            //moviesRec: res.data
           }
         })
       }
