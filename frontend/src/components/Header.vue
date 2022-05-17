@@ -1,24 +1,42 @@
 <template>
   <div class="container">
     <div class="child" id="one">
-      <n-button> Home</n-button>
+      <n-button @click="handleHome"> Home</n-button>
     </div>
     <div class="child" id="two">
-      <n-button> Github</n-button>
+      <n-button @click="handleGit"> Github</n-button>
     </div>
     <div class="child" id="four">
-      <n-button type="primary"> About us</n-button>
+      <n-button type="primary" @click="handleAbout"> About us</n-button>
     </div>
   </div>
 </template>
 
 <script>
 import { NButton } from 'naive-ui'
+import router from '../router'
 
 export default {
   name: "HeaderComponent",
+
   components: {
     NButton,
+  },
+
+  methods: {
+    handleHome(){
+      router.push({
+        name: 'Home',
+      })
+    },
+
+    handleGit(){
+      window.open("https://github.com/Alexlly/MovieRecommendation")
+    },
+
+    handleAbout(){
+      console.log("Opens to about us")
+    }
   }
 
 }

@@ -1,10 +1,10 @@
 <template>
-  <n-card size="small">
+  <h3 @click="handleClick">{{name}}</h3>
+  <n-card size="small" content-style="padding: 0;" footer-style="padding: 100;" :bordered="false">
     <template #cover>
-      <img :src=this.poster>
+      <img :src=this.poster @click="handleClick">
     </template>
     <div class="contentStuff">
-      {{name}}
     </div>
   </n-card>
 </template>
@@ -25,6 +25,7 @@ export default {
       title: null,
       poster: null,
       year: null,
+      imdbID: null,
       key: this.name
     }
   },
@@ -47,6 +48,7 @@ export default {
     populateInfo(movieSearch){
       let info = this.findFromQuery(movieSearch);
       this.poster = movieSearch.Search[info].Poster
+      this.imdbID = movieSearch.Search[info].imdbID
     },
 
     deleteSelf(){
@@ -54,6 +56,10 @@ export default {
       //this.$destroy()
       //this.$el.parentNode.removeChild(this.$el)
       // Maybe try to delete from array in results page
+    },
+
+    handleClick(){
+      window.open(`https://www.imdb.com/title/${this.imdbID}/`)
     }
   },
 
@@ -104,13 +110,17 @@ export default {
   .n-card {
     max-width: 15vw;
     max-height: 1fr;
-    content: 100%;
     height: 100%;
+    cursor: pointer
   }
 
   .contentStuff{
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  h3{
+    cursor: pointer;
   }
 </style>
