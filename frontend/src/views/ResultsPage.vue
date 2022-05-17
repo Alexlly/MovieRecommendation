@@ -32,14 +32,14 @@ export default {
 
   props: {
     searchQuery: String,
-    //moviesRec: Array
+    movies: Array
   },
 
 
   data() {
     return{
       //movies: ["The Batman (2022)", "Dien Binh Phu (1992)", "Blade Runner 2049 (2017)", "Dune (2021)", "Sicario (2015)"],
-      movies: ["The Batman (2022)", "Fight Club (1999)", "Blade Runner 2049 (2017)", "Dune (2021)", "Sicario (2015)", "Interstellar (2014)", "Starship Troopers (1997)"],
+      //movies: ["The Batman (2022)", "Fight Club (1999)", "Blade Runner 2049 (2017)", "Dune (2021)", "Sicario (2015)", "Interstellar (2014)", "Starship Troopers (1997)"],
       moviesData: []
     }
   },
