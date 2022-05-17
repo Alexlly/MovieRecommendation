@@ -28,8 +28,9 @@ then visit localhost:8080
 cd frontend
 npm install # If you haven't installed the packages yet
 npm run serve
-```
 
+npm run build # for backend
+```
 
 
 
