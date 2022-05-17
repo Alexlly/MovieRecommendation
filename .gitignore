@@ -1,6 +1,6 @@
-
 *.xml
 *.iml
 *.csv
 *.h5
 *.m
+frontend/.env
