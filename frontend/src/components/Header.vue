@@ -1,8 +1,11 @@
 <template>
   <div class="container">
-    <div class="child" id="one">One</div>
-    <div class="child" id="two">Two</div>
-    <div class="child" id="three">Three</div>
+    <div class="child" id="one">
+      <n-button> Home</n-button>
+    </div>
+    <div class="child" id="two">
+      <n-button> Github</n-button>
+    </div>
     <div class="child" id="four">
       <n-button type="primary"> About us</n-button>
     </div>
@@ -24,7 +27,6 @@ export default {
 <style scoped>
   .container {
     width: 100%;
-    border: 2px solid blue; 
     vertical-align: text-bottom;
     overflow: hidden
   }
@@ -32,7 +34,6 @@ export default {
   .child {
     height: 100%;
     display: inline-block;
-    background-color: brown;
     margin-left: 1vw;
   }
 

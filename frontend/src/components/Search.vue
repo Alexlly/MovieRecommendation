@@ -3,7 +3,7 @@
     <div class="child">
       <n-input v-model:value="name" class="input" type="text" placeholder="e.g. Sicario"/>
     </div>
-    <div>
+    <div class="child-2">
       <n-button type="primary" @click="handleClick"> Search! </n-button>
     </div>
   </div>
@@ -59,12 +59,16 @@ export default {
 </script>
 
 <style scoped>
-  .input {
+  .container {
     display: flex;
     flex-direction: column;
   }
 
   .child {
     margin-right: 5px
+  }
+
+  .child-2{
+    padding: 10px;
   }
 </style>

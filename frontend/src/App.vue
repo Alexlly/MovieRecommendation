@@ -29,7 +29,7 @@ export default {
   }
 
   body{
-    padding: 0;
+    padding: 10px;
     margin: 0
   }
 

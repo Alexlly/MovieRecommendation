@@ -105,7 +105,7 @@ export default {
     max-width: 15vw;
     max-height: 1fr;
     content: 100%;
-    height: 100%
+    height: 100%;
   }
 
   .contentStuff{

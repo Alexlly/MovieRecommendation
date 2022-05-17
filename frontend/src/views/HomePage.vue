@@ -22,7 +22,6 @@ export default {
 <style scoped>
   .container {
     text-align: center;
-    background-color: orange;
     display: flex;
     justify-content: center;
     height: 100%
