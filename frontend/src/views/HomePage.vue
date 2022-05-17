@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <h1> Movie Recommendation System </h1>
-    <h3>A project by Group what </h3>
-    <SearchBar class="test"/>
+    <div>
+      <h1> Movie Recommendation System </h1>
+      <h3>A project by Group what </h3>
+      <SearchBar class="test"/>
+    </div>
   </div>
 </template>
 
@@ -20,7 +22,9 @@ export default {
 <style scoped>
   .container {
     text-align: center;
-    background-color: orange;
+    display: flex;
+    justify-content: center;
+    height: 100%
   }
 
 </style>

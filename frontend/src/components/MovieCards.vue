@@ -1,8 +1,11 @@
 <template>
-  <n-card :title=name>
+  <h3 @click="handleClick">{{name}}</h3>
+  <n-card size="small" content-style="padding: 0;" footer-style="padding: 100;" :bordered="false">
     <template #cover>
-      <img :src=this.poster>
+      <img :src=this.poster @click="handleClick">
     </template>
+    <div class="contentStuff">
+    </div>
   </n-card>
 </template>
 
@@ -19,8 +22,11 @@ export default {
 
   data() {
     return{
-      test: "test",
+      title: null,
       poster: null,
+      year: null,
+      imdbID: null,
+      key: this.name
     }
   },
 
@@ -29,25 +35,31 @@ export default {
 
     },
 
-    findFromQuery(){
-      let test = [
-        { Title: "Sicario", Year: "2015", imdbID: "tt3397884", Poster: "https://m.media-amazon.com/images/M/MV5BMjA5NjM3NTk1M15BMl5BanBnXkFtZTgwMzg1MzU2NjE@._V1_SX300.jpg"},
-        { Title: "Sicario: Day of the Soldado", Year: "2018", imdbID: "tt5052474", Poster: "https://m.media-amazon.com/images/M/MV5BMTEzNjM2NTYxMjReQTJeQWpwZ15BbWU4MDU2NzAxNTUz._V1_SX300.jpg"} ,
-        { Title: "American Sicario", Year: "2021", imdbID: "tt13322120", Poster: "https://m.media-amazon.com/images/M/MV5BYzU2NDk0MTEtYjE3Yi00…ItYjg2NDkwOWZmY2I3XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_SX300.jpg" },
-      ] // Pretending to be data from the Movie Database Alternative API
-      for (let i = 0; i < test.size; i++){
-        console.log("testt")
+    findFromQuery(movieSearch){
+      for (let i = 0; i < movieSearch.Search.length; i++){
+        if (movieSearch.Search[i].Year == this.year){
+          return i;
+        }
       }
+
+      return 0;
     },
 
     populateInfo(movieSearch){
-      this.poster = movieSearch.Search[0].Poster
+      let info = this.findFromQuery(movieSearch);
+      this.poster = movieSearch.Search[info].Poster
+      this.imdbID = movieSearch.Search[info].imdbID
     },
 
     deleteSelf(){
       console.log("lmao")
-      this.$destroy()
-      this.$el.parentNode.removeChild(this.$el)
+      //this.$destroy()
+      //this.$el.parentNode.removeChild(this.$el)
+      // Maybe try to delete from array in results page
+    },
+
+    handleClick(){
+      window.open(`https://www.imdb.com/title/${this.imdbID}/`)
     }
   },
 
@@ -56,13 +68,16 @@ export default {
   },
 
   async created(){
+    console.log(this.key)
     let arr = this.name.split("(")
-    arr[0] = arr[0].trim()
+    this.title = arr[0].trim()
     arr[arr.length - 1] = arr[arr.length - 1].slice(0, -1) // (Removed last bracket)
+    this.year = arr[1].trim()
+    
     const options = {
       method: 'GET',
       url: 'https://movie-database-alternative.p.rapidapi.com/',
-      params: {s: arr[0], r: 'json', page: '1'},
+      params: {s: this.title, r: 'json', page: '1'},
       headers: {
         'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com',
         'X-RapidAPI-Key': `${process.env.VUE_APP_MOVIE_KEY}`
@@ -74,16 +89,18 @@ export default {
       return request
     })*/ //Testing get request from axios
 
-    let res = await axios.request(options).catch(function (error) {
-      console.error(error);
-    });
+    let res = await axios.request(options)
+      .catch(function (error) {
+        console.error(error);
+      }
+    );
+
     if (res.data.Response == "True"){
       this.populateInfo(res.data)
     } 
     else{
       this.deleteSelf()
     }
-    // Add condition where movie is not found 
   },
 
 }
@@ -92,5 +109,18 @@ export default {
 <style scoped>
   .n-card {
     max-width: 15vw;
+    max-height: 1fr;
+    height: 100%;
+    cursor: pointer
+  }
+
+  .contentStuff{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3{
+    cursor: pointer;
   }
 </style>
