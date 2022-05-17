@@ -40,6 +40,6 @@ def recommendation(request):
                 print( '{0}: {1}, with distance of {2}:'.format( i, dataset.index[indices.flatten()[i]],
                                                                  distances.flatten()[i] ) )
                 recommendations.append( dataset.index[indices.flatten()[i]] )
-        return HttpResponse( "||".join(recommendations ))
+        return HttpResponse( recommendations )
     else:
         return HttpResponse( 'it is not a POST request' )
