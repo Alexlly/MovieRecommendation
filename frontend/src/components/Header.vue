@@ -24,10 +24,9 @@ export default {
 <style scoped>
   .container {
     width: 100%;
-    background-color: yellow;
-    float: left;
     border: 2px solid blue; 
     vertical-align: text-bottom;
+    overflow: hidden
   }
 
   .child {

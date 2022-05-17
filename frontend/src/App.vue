@@ -1,6 +1,6 @@
 <template>
   <n-message-provider>
-    <HeaderComponent/>
+    <header-component class="head"></header-component>
     <router-view/>
   </n-message-provider>
 </template>
@@ -16,6 +16,7 @@ export default {
     NMessageProvider
   }
   // text-align: center;
+  // <HeaderComponent/>
 }
 </script>
 
@@ -25,6 +26,11 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+  }
+
+  body{
+    padding: 0;
+    margin: 0
   }
 
 </style>

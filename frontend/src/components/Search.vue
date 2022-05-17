@@ -1,14 +1,16 @@
 <template>
   <div class="container">
-    <n-space vertical>
+    <div class="child">
       <n-input v-model:value="name" class="input" type="text" placeholder="e.g. Sicario"/>
+    </div>
+    <div>
       <n-button type="primary" @click="handleClick"> Search! </n-button>
-    </n-space>
+    </div>
   </div>
 </template>
 
 <script>
-import { NInput, NButton, NSpace, useMessage } from 'naive-ui'
+import { NInput, NButton, useMessage } from 'naive-ui'
 import router from '../router'
 
 export default {
@@ -17,7 +19,6 @@ export default {
   components: {
     NInput,
     NButton,
-    NSpace
   },
 
   data() {
@@ -38,13 +39,15 @@ export default {
         )
         this.message.error("Please enter a movie name")
       }
-      console.log(`Button clicked. Sending ${this.name}`)
-      router.push({
-        name: 'Result',
-        params: {
-          searchQuery: this.name
-        }
-      })
+      else{
+        console.log(`Button clicked. Sending ${this.name}`)
+        router.push({
+          name: 'Result',
+          params: {
+            searchQuery: this.name
+          }
+        })
+      }
     }
   }
 
@@ -53,6 +56,11 @@ export default {
 
 <style scoped>
   .input {
-    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .child {
+    margin-right: 5px
   }
 </style>
