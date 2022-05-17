@@ -9,6 +9,7 @@
 
 <script>
 import { NInput, NButton, NSpace, useMessage } from 'naive-ui'
+import router from '../router'
 
 export default {
   name: 'SearchBar',
@@ -38,6 +39,12 @@ export default {
         this.message.error("Please enter a movie name")
       }
       console.log(`Button clicked. Sending ${this.name}`)
+      router.push({
+        name: 'Result',
+        params: {
+          searchQuery: this.name
+        }
+      })
     }
   }
 

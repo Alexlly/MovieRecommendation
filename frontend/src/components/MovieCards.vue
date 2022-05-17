@@ -20,7 +20,7 @@ export default {
   data() {
     return{
       test: "test",
-      poster: null
+      poster: null,
     }
   },
 
@@ -42,6 +42,12 @@ export default {
 
     populateInfo(movieSearch){
       this.poster = movieSearch.Search[0].Poster
+    },
+
+    deleteSelf(){
+      console.log("lmao")
+      this.$destroy()
+      this.$el.parentNode.removeChild(this.$el)
     }
   },
 
@@ -50,7 +56,6 @@ export default {
   },
 
   async created(){
-    console.log(this.name)
     let arr = this.name.split("(")
     arr[0] = arr[0].trim()
     arr[arr.length - 1] = arr[arr.length - 1].slice(0, -1) // (Removed last bracket)
@@ -72,11 +77,15 @@ export default {
     let res = await axios.request(options).catch(function (error) {
       console.error(error);
     });
-    if (res.data){
+    if (res.data.Response == "True"){
       this.populateInfo(res.data)
-    } // Add condition where movie is not found
-    
-  }
+    } 
+    else{
+      this.deleteSelf()
+    }
+    // Add condition where movie is not found 
+  },
+
 }
 </script>
 

@@ -11,7 +11,8 @@ const routes = [
   {
     path: '/results',
     name: 'Result',
-    component: ResultsPage
+    component: ResultsPage,
+    props: true
   }
 ]
 
