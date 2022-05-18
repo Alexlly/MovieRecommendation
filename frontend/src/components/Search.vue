@@ -12,7 +12,7 @@
 <script>
 import { NInput, NButton, useMessage } from 'naive-ui'
 import router from '../router'
-//import axios from 'axios'
+import axios from 'axios'
 
 export default {
   name: 'SearchBar',
@@ -42,13 +42,14 @@ export default {
       }
       else{
         console.log(`Button clicked. Sending ${this.name}`)
-        //let res = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/recommendation`, {name: this.name})
-        //let moviesRec = res.data
+        let res = await axios.post(`/recommendation/`, {name: this.name})
+        let moviesRec = res.data.movies
+        console.log(`POST rec ${this.moviesRec}`)
         router.push({
           name: 'Result',
           params: {
             searchQuery: this.name,
-            //moviesRec: res.data
+            movies: moviesRec
           }
         })
       }
