@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="child">
-      <n-input v-model:value="name" @keyup.enter="handleClick" class="input" type="text" placeholder="e.g. Sicario"/>
+      <n-input v-model:value="name" @keyup.enter="handleClick" class="input" type="text" placeholder="e.g. Dredd (2012)"/>
     </div>
     <div class="child-2">
       <n-button type="primary" @click="handleClick"> Search! </n-button>
