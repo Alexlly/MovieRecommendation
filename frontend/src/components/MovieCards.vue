@@ -52,7 +52,7 @@ export default {
     },
 
     deleteSelf(){
-      console.log("lmao")
+      console.log("lmao destroyed")
       //this.$destroy()
       //this.$el.parentNode.removeChild(this.$el)
       // Maybe try to delete from array in results page
@@ -68,7 +68,6 @@ export default {
   },
 
   async created(){
-    console.log(this.key)
     let arr = this.name.split("(")
     this.title = arr[0].trim()
     arr[arr.length - 1] = arr[arr.length - 1].slice(0, -1) // (Removed last bracket)

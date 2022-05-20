@@ -42,7 +42,7 @@ export default {
       }
       else{
         console.log(`Button clicked. Sending ${this.name}`)
-        let res = await axios.post(`/recommendation/`, {name: this.name})
+        let res = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/recommendation/`, {name: this.name})
         let moviesRec = res.data.movies
         console.log(`POST rec ${this.moviesRec}`)
         router.push({

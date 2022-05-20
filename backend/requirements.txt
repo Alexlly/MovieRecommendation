@@ -1,6 +1,9 @@
-numpy==1.16.5
-Django==3.1.1
 pandas==1.1.5
 scikit-image==0.15.0
 scikit-learn==0.21.3
 scipy==1.3.1
+tables==3.5.1
+conda-build
+cytoolz==0.10.0
+Django==3.1.1
+django-cors-headers==3.11.0
