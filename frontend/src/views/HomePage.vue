@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <h1> Movie Recommendation System </h1>
-      <h3>A project by Group what </h3>
+      <h3>A project by Group 30? </h3>
       <SearchBar class="test"/>
     </div>
   </div>

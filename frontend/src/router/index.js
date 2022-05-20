@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import HomePage from '../views/HomePage.vue'
 import ResultsPage from '../views/ResultsPage.vue'
+import AboutPage from '../views/AboutPage.vue'
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     name: 'Result',
     component: ResultsPage,
     props: true
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutPage
   }
 ]
 
