@@ -36,6 +36,9 @@ export default {
 
     handleAbout(){
       console.log("Opens to about us")
+      router.push({
+        name: 'About',
+      })
     }
   }
 
