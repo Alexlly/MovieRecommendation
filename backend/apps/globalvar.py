@@ -13,6 +13,7 @@ def __init(**kwargs):
     _globals_dict = kwargs if kwargs else {}
     print( "start movie config" )
     # need to write the local
+    # todo : please change to ur local path
     h5_store = pd.HDFStore( "/Users/ly/Desktop//moviePivot.h5", mode='r' )
     _globals_dict['dataset'] = h5_store['moviePivot']
     _globals_dict['knn_model'] = joblib.load( "/Users/ly/Desktop//model_knn.m" )
