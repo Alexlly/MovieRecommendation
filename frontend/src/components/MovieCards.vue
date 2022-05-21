@@ -80,7 +80,7 @@ export default {
       params: {s: this.title, r: 'json', page: '1'},
       headers: {
         'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com',
-        'X-RapidAPI-Key': `${process.env.VUE_APP_MOVIE_KEY}`
+        'X-RapidAPI-Key': `97569ffbbamsh83241975331a03dp10c8cajsnd94f89a06a00`
       }
     };
     
