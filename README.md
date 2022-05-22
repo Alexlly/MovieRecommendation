@@ -1,18 +1,7 @@
 # Movie Recommendation
-42913 ass3 - Enjoy!
+42913 ass3 by Group 30 - Enjoy!
 
-
-
-
-
-### Set up a new App
-
-```bash
- cd backend/apps
- django-admin startapp Movies
-```
-
-
+## Must run both backend and frontend!
 
 ### Backend ！【important】
 
@@ -35,6 +24,7 @@ python manage.py runserver # Run server
 cd frontend
 npm install
 npm run build
+serve -s dist
 ```
 
 Then visit http://localhost:3000 and enjoy!
