@@ -22,6 +22,7 @@ Then follow the steps as below.
 
 ```bash
 ##### From your python 3.7 environment #####
+
 cd backend # Enter backend folder
 unzip 'model&data.zip' # Only if you haven't unzipped before
 pip install -r requirements.txt # Install packages
@@ -32,17 +33,8 @@ python manage.py runserver # Run server
 
 ```bash
 cd frontend
-npm install # If you haven't installed the packages yet
-npm run build # for backend
-```
-
-
-
-### Run
-
-```bash
-cd backend
-python manage.py runserver
+npm install
+npm run build
 ```
 
 Then visit http://localhost:3000 and enjoy!
