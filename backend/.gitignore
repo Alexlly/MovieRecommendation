@@ -3,3 +3,6 @@
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+apps/__pycache__
+apps/Movies/__pycache__
+MovieRecommendation/__pycache__
