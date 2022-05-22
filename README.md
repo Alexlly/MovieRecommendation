@@ -16,17 +16,22 @@
 
 ### Backend ！【important】
 
-Please remember to change the absolute addresses of the model_knn.m and moviePivot.h5 directories in the backend/ folder to the backend/apps/globalvar.py file and update them to ensure that the datasets and smart models are imported.
+To set up the backend, you must use an environment running python 3.7. We recommend creating an anaconda environment to handle this. 
 
+Then follow the steps as below.
 
+```bash
+cd backend # Enter backend folder
+unzip 'models&data.zip' # Only if you haven't unzipped before
+pip install -r requirements.txt # Install packages
+python manage.py runserver # Run server
+```
 
-### Frontend
+### Frontend 【important】
 
 ```bash
 cd frontend
 npm install # If you haven't installed the packages yet
-npm run serve
-
 npm run build # for backend
 ```
 
@@ -39,7 +44,7 @@ cd backend
 python manage.py runserver
 ```
 
-then visit localhost:8080
+Then visit http://localhost:3000 and enjoy!
 
 
 
