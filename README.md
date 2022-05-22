@@ -14,11 +14,13 @@ Then follow the steps as below.
 
 cd backend # Enter backend folder
 unzip 'model&data.zip' # Only if you haven't unzipped before
-pip install -r requirements.txt # Install packages
-python manage.py runserver # Run server
+pip install -r requirements.txt # Install packages to your python 3.7 environment
+python manage.py runserver 
 ```
 
 ### Frontend 【important】
+
+To set up frontend, node and npm must be installed on your machine
 
 ```bash
 cd frontend
