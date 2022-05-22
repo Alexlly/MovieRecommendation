@@ -24,7 +24,9 @@ python manage.py runserver
 
 ### Frontend 【important】
 
-To set up frontend, node and npm must be installed on your machine
+The frontend can be accessed by visiting http://group30rovierecommendation.s3-website-ap-southeast-2.amazonaws.com. _**The backend must still be run locally.**_
+
+Alternatively you can set up the frontend locally however, node and npm must be installed on your machine
 
 ```bash
 cd frontend
@@ -34,7 +36,6 @@ serve -s dist
 
 Then visit http://localhost:3000 and enjoy!
 
-Alternatively for the frontend, you can visit http://group30rovierecommendation.s3-website-ap-southeast-2.amazonaws.com. _**The backend must still be run locally however.**_
 
 
 
