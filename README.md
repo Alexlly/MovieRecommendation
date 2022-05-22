@@ -21,8 +21,9 @@ To set up the backend, you must use an environment running python 3.7. We recomm
 Then follow the steps as below.
 
 ```bash
+##### From your python 3.7 environment #####
 cd backend # Enter backend folder
-unzip 'models&data.zip' # Only if you haven't unzipped before
+unzip 'model&data.zip' # Only if you haven't unzipped before
 pip install -r requirements.txt # Install packages
 python manage.py runserver # Run server
 ```
