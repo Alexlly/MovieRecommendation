@@ -23,7 +23,6 @@ python manage.py runserver # Run server
 ```bash
 cd frontend
 npm install
-npm run build
 serve -s dist
 ```
 
