@@ -7,7 +7,7 @@
 
 ### Backend ！【important】
 
-To set up the backend, you must use an environment running python 3.7. We recommend creating an anaconda environment to handle this. 
+To set up the backend, you must use an environment running python 3.7. We recommend using anaconda to create an environment to handle this. 
 
 Then follow the steps as below.
 
