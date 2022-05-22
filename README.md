@@ -34,7 +34,7 @@ serve -s dist
 
 Then visit http://localhost:3000 and enjoy!
 
-Alternatively for the frontend, you can visit http://group30rovierecommendation.s3-website-ap-southeast-2.amazonaws.com. The backend must still be run locally however.
+Alternatively for the frontend, you can visit http://group30rovierecommendation.s3-website-ap-southeast-2.amazonaws.com. _**The backend must still be run locally however.**_
 
 
 
