@@ -20,7 +20,6 @@
 <script>
 import MovieCard from "../components/MovieCards.vue"
 import SearchBar from "../components/Search.vue"
-//import axios from "axios"
 
 export default {
   name: 'ResultsPage',
@@ -34,30 +33,7 @@ export default {
     searchQuery: String,
     movies: Array
   },
-
-
-  data() {
-    return{
-      //movies: ["The Batman (2022)", "Dien Binh Phu (1992)", "Blade Runner 2049 (2017)", "Dune (2021)", "Sicario (2015)"],
-      //movies: ["The Batman (2022)", "Fight Club (1999)", "Blade Runner 2049 (2017)", "Dune (2021)", "Sicario (2015)", "Interstellar (2014)", "Starship Troopers (1997)"],
-      moviesData: []
-    }
-  },
-
-  methods:{
-    removeMovie(){
-      console.log("removing")
-      //this.movies = this.movies.filter(item => item !== "Dien Binh Phu (1992)")
-    }
-  },
 }
-
-/*.parent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }*/
 </script>
 
 <style scoped>
@@ -84,10 +60,6 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-
-  .QueryResult{
-
   }
 
 </style>

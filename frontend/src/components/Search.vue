@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="child">
-      <n-input v-model:value="name" @keyup.enter="handleClick" class="input" type="text" placeholder="e.g. Sicario"/>
+      <n-input v-model:value="name" @keyup.enter="handleClick" class="input" type="text" placeholder="e.g. Dredd (2012)"/>
     </div>
     <div class="child-2">
       <n-button type="primary" @click="handleClick"> Search! </n-button>
@@ -42,7 +42,7 @@ export default {
       }
       else{
         console.log(`Button clicked. Sending ${this.name}`)
-        let res = await axios.post(`/recommendation/`, {name: this.name})
+        let res = await axios.post(`${process.env.VUE_APP_BACKEND_URL}/recommendation/`, {name: this.name})
         let moviesRec = res.data.movies
         console.log(`POST rec ${this.moviesRec}`)
         router.push({

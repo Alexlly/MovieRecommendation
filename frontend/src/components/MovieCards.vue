@@ -52,7 +52,7 @@ export default {
     },
 
     deleteSelf(){
-      console.log("lmao")
+      console.log("lmao destroyed")
       //this.$destroy()
       //this.$el.parentNode.removeChild(this.$el)
       // Maybe try to delete from array in results page
@@ -68,7 +68,6 @@ export default {
   },
 
   async created(){
-    console.log(this.key)
     let arr = this.name.split("(")
     this.title = arr[0].trim()
     arr[arr.length - 1] = arr[arr.length - 1].slice(0, -1) // (Removed last bracket)
@@ -80,7 +79,7 @@ export default {
       params: {s: this.title, r: 'json', page: '1'},
       headers: {
         'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com',
-        'X-RapidAPI-Key': `97569ffbbamsh83241975331a03dp10c8cajsnd94f89a06a00`
+        'X-RapidAPI-Key': `${process.env.VUE_APP_MOVIE_KEY}`
       }
     };
     
