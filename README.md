@@ -16,7 +16,7 @@ Then follow the steps as below.
 
 cd MovieRecommendation # Enter folder containing files
 cd backend  # Enter backend folder
-unzip 'model&data.zip'  # Only if you haven't unzipped before
+unzip 'model&data.zip'  # Or use unarchiver of your choice
 pip install -r requirements.txt # Install packages to your python 3.7 environment
 python manage.py runserver 
 ```
